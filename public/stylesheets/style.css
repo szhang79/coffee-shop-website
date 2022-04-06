@@ -1,0 +1,622 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  /* text-align: center; */
+}
+
+/* LANDING PAGE */
+.landing-body {
+  background-color: #A18276; /* Used if the image is unavailable */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.89)) , url("../imgs/coffee-shop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  display: grid;
+  background-color: #624B43;
+  color: #F3EAE3;
+  text-align: center;
+  height: 100%;
+}
+
+.landing-body div {
+  margin-top: 15%;
+}
+
+.landing-body h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 100px;
+  color: #F3EAE3;
+  font-size: 85px;
+  display: inline;
+ }
+
+ .landing-body button {
+    border-radius: 3px;
+    border: 0.5px solid black;
+    padding: 10px 25px;
+    background-color: #F3EAE3;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.landing-body button:hover {
+  background-color: #806861;
+  color: #F3EAE3;
+  border: none;
+}
+
+.landing-body a {
+  font-size: 17px;
+  color: black;
+  text-decoration: none;
+}
+
+.landing-body a:hover {
+  color: #F3EAE3;
+}
+
+.fa-mug-hot {
+  font-size: 60px;
+}
+
+/* INDEX.HTML */
+
+.column {
+    float: left; /* Normally div elements will be displayed on top of each other. However, if we use float: left we can let elements float next to each other */
+}
+  
+.left, .right {
+    background-color: #A18276;
+    color: white;
+    position:relative;
+    min-height: 120%; /* TEMPORARY FIX */
+}
+
+.left {
+  width: 15%; 
+}
+
+.right {
+  width: 24%;
+}
+  
+.middle {
+  align-items: left;
+  width: 61%;
+  min-height: 100vh;
+}
+
+
+.left > button {
+    color: white;
+    background-color: rgba(196, 196, 196, 0.25);; /*#b89f97*/
+    font-size: 13px;
+    border-radius: 3px;
+    border: none;
+    padding: 8px 12px;
+    margin: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    text-align: left;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+.left > button:hover {
+    background-color: #A18276;
+}
+
+.left > .tab.profile {
+  margin-top: 20px;
+}
+.active {
+    background-color: rgba(41, 33, 27, 0.5);
+}
+
+
+.left h3{
+  font-family: 'Kaushan Script', cursive;
+  margin-left: 12px;
+
+}
+
+.right > p {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 20px;
+    
+}
+
+.user-info {
+    background-color: #A18276;
+    padding: 6px 8px;
+    margin: 10px;
+    border-radius: 3px;
+    width: auto;
+    float: right;
+    color: white;
+    font-size: 13px;
+}
+
+#tab-retreived {
+    margin: 20px;
+    clear: right; /* do not allow floating elements on the right side, which is user-info in this case */
+}
+
+#tab-retreived  > p {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 6px;
+    color: #624B43;
+}
+
+#tab-retreived  > input {
+    background-color: #F3EAE3;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 12px;
+    width: 75%;
+    outline: none; /* By default, some browsers will add a blue outline around the input when it gets focus (clicked on). You can remove this behavior by adding outline: none; to the input. */
+}
+
+
+.fa-arrow-right-from-bracket {
+    margin-left: 10px;
+    color:rgba(224, 229, 233, 0.596);
+
+}
+
+.fa-arrow-right-from-bracket:hover {
+    color: white;
+}
+
+.fa-magnifying-glass {
+    color: #624B43;
+    padding: 9px;
+    outline: none;
+}
+
+#tab-retreived > button {
+    border: none;
+}
+
+#tab-retreived > button:hover {
+    background-color: #624B43;
+}
+
+.fa-magnifying-glass:hover {
+    color: #F3EAE3;
+}
+
+img {
+    border-radius: 50%;
+}
+
+#searchResults {
+    display: flex;
+    flex-wrap:wrap;
+    column-gap: 14px;
+}
+
+::-webkit-scrollbar,.userCard::-webkit-scrollbar {
+    border-radius: 3px;
+    background-color: #A18276;
+    height: 7px;
+  }
+
+::-webkit-scrollbar-thumb, .userCard::-webkit-scrollbar-thumb {
+    background-color: #b89f97;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-track, .userCard::-webkit-scrollbar-track {
+    background-color: #A18276;
+    border-radius: 10px;
+   
+}
+
+.userCard, .friendRequestsCard {
+    background-color: #F3EAE3;
+    border-radius: 3px;
+    padding: 10px 12px;
+    margin: 23px 2px 0px;
+    display: flex;
+    width: calc(50% - 12px); /* side margin 4px + gap margin 14px ?? */
+    overflow: auto;
+}
+
+.userCard {
+  position: relative;
+  display: flex;
+}
+
+.friendRequestsCard {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  align-items: center;
+}
+
+.card-col, .fR-card-col {
+  float: left;
+  padding: 18px 12px;
+}
+
+.userCard > .card-col-1 > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+} 
+
+.userCard > .card-col-2 p.username, .friendRequestsCard > .fR-card-col p.username {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.friendRequestsCard > .fR-card-col-2 {
+  /* margin-top: 20px; */
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  height: 100px;
+}
+
+.fR-card-col-2 div {
+  margin: 1px;
+}
+
+.friendRequestsCard > .fR-card-col-3 {
+  margin-top: 16px;
+  display: grid;
+}
+
+.userCard >.card-col-2 p.bio {
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 5px 0px;
+    width: 145px;
+}
+
+.friendRequestsCard > .fR-card-col p.bio {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: italic;
+  margin: 5px 0px;
+  width:  380px;
+}
+
+.userCard >.card-col-3 > button, .friendRequestsCard > .fR-card-col button {
+    border-radius: 3px;
+    border: 0.5px solid black;
+    padding: 6px 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+.userCard >.card-col-3 > button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+}
+
+.userCard >.card-col-3 > button:hover, .friendRequestsCard > .fR-card-col > button:hover {
+    background-color: #806861;
+    color: #F3EAE3;
+    border: none;
+}
+
+.friendRequestsCard {
+    width: calc(100% - 6px);
+}
+
+.friendRequestsCard > .fR-card-col-1 > img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.friendRequestsCard > .fR-card-col > .add {
+    font-size: 12px;
+    padding: 12px 20px;
+    margin-bottom: 12px;
+
+}
+
+.friendRequestsCard > .fR-card-col > .remove {
+    font-size: 12px;
+    padding: 12px 28px;
+}
+
+/* Activity Tab Styling */
+
+.right h2 {
+  font-size: 18px;
+}
+
+.activity-title {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  column-gap: 10px;
+}
+
+.left-activity-tit {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-items: center;
+}
+
+.activity-tit-child h2 {
+  text-align: left;
+  display: inline-block;
+  
+}
+
+.activity-tit-child.btn {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+#set-activity:hover {
+  background-color: #F3EAE3;
+  color:#624B43;
+}
+
+.btn button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+  color: white;
+}
+
+/* This is the Activity Status Form */
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+#activity-status-form {
+  /* display: none; */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -250px;
+  width: 400px;
+  height: 500px;
+  border: solid #A18276 5px;
+  border-radius: 6px;
+  background-color: white;
+  color: black;
+  padding: 25 75px;
+  text-align: center;
+  position: relative;
+}
+
+#activity-status-form h3 {
+  font-size: 28px;
+  clear: right; 
+}
+
+#activity-status-form form {
+  text-align: left;
+}
+
+#activity-status-form .subheading {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+
+#activity-status-form input[type=radio] {
+  margin: 5px;
+}
+
+#activity-status-form input[type=text] {
+  padding: 5px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #F3EAE3;
+  opacity: 0.8;
+  border-radius: 6px;
+}
+
+#activity-status-form #formCloseBtn {
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+
+#activity-status-form #formCloseBtn:hover {
+  color: #806861;
+}
+
+#activity-status-form button {
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #F3EAE3;
+  opacity: 0.8;
+  border-radius: 6px;
+  border: solid black 1px;
+}
+
+#activity-status-form button:hover {
+  background-color: #806861;
+  color: #F3EAE3;
+  border: none;
+
+}
+
+.form-div {
+  margin-top: 30px;
+}
+
+/* End of aCtivity Status Form */
+
+hr {
+ width: 80%;
+}
+
+/* Start of Activity cards */
+
+#activityResults {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  justify-content: center;
+}
+
+.userActivityCard {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  width: 95%;
+  padding: 10px;
+  margin: 5px auto;
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+}
+
+.refresh {
+  width: 20px;
+  height: 20px;
+}
+
+.refresh:active {
+  width: 18px;
+  height: 18px;
+}
+
+.activity-div-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 14px;
+}
+
+.since-posted {
+  font-weight: 100;
+  font-style: italic;
+  text-align: right;
+}
+
+.actCard-col-1 img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.actCard-col-2 h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+.actCard-col-2 p {
+  font-size: 14px;
+  margin: 0;
+  padding-top: 2px;
+}
+
+/* PROFILE TAB */
+
+.profile-page {
+  margin: 65px 30px;
+}
+
+.profile-header {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-row: auto;
+  grid-gap: 1rem;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.profile-header img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.profile-info {
+  height: 150px;
+}
+
+.profile-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+
+.profile-bottom p {
+  margin: 0;
+  font-style: italic;
+  font-size: 18px;
+  width: 90%;
+}
+
+.profile-top div {
+  margin: auto;
+  margin-right: 0;
+}
+
+.profile-page button {
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: black solid 1px;
+  background-color: rgba(219, 193, 172, 0.5)
+}
+
+.profile-page button:hover {
+  background-color: #806861;
+  color: #F3EAE3;
+}
+
+.profile-page textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  font-size: 18px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+
+.active {
+  background-color:rgb(148, 91, 127);
+}

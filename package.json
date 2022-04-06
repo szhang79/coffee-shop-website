@@ -1,0 +1,36 @@
+{
+  "name": "coffee-study-app",
+  "version": "1.0.0",
+  "description": "An application to log and share which coffee shops a user is studying at",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": "~14"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soopark82/441-Project.git"
+  },
+  "author": "Eric Carlson, Soo Park, Harmeet Singh, Stephanie Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soopark82/441-Project/issues"
+  },
+  "homepage": "https://github.com/soopark82/441-Project#readme",
+  "devDependencies": {
+    "express-starter": "0.0.2",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "microsoft-identity-express": "github:azure-samples/microsoft-identity-express",
+    "mongoose": "^6.2.3",
+    "morgan": "^1.10.0",
+    "sessions": "^0.0.2-7"
+  }
+}
